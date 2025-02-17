@@ -1,12 +1,25 @@
 // src/pages/Homepage.js
-
+import React, { useEffect, useState } from 'react';
 import "../styles/homepage.css"; // Import your styles
+import animateElements from '../script/gsapAnimations.js'; // Correct import (default export)
 
 const Homepage = () => {
- // Empty dependency array ensures the effect runs once when the component mounts
+  const [reloadKey, setReloadKey] = useState(0);
+
+  useEffect(() => {
+    console.log("useEffect is running...");
+
+    animateElements();
+  }, [reloadKey]);  // Empty dependency array ensures the effect 
+
+  const handleReload = () => {
+    // Increment the reloadKey to force the component to remount
+    setReloadKey(prevKey => prevKey + 1);
+  };
 
   return (
     <div>
+      <button onClick={handleReload}>Force Reload</button>
       <div className="container">
         <div className="header">
           <div className="header-left col">
