@@ -9,6 +9,7 @@ html, body {
   background: #000000;
 }
 
+  
 .nav {
   width: 100%;
   display: flex;
@@ -16,6 +17,7 @@ html, body {
   padding: 2em 1em 2em 2em;
   font-family: "Monument Extended", Arial, Helvetica, sans-serif;
   color: white;
+
 }
 
 .nav > * {
@@ -137,6 +139,7 @@ html, body {
   width: 95%;
   height: 50vh;
   border-radius: 40px 40px 0 0;
+  top: -4em; /* Added negative top position */
   margin: 2em auto;
   display: flex;
   justify-content: flex-end;

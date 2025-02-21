@@ -1,24 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/homepage.css';
-import { useEffect, useState } from 'react';
-import navAnimateElements from '../script/navgGsapAnimations.js';
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+ 
+
 
 const Navbar = () => {
 
-  
-  const [reloadKey, setReloadKey] = useState(0);
-  useEffect(() => {
-    console.log("useEffect is running...");
-
-    navAnimateElements();
-  }, [reloadKey]);
-  
-  const handleReload = () => {
-    // Increment the reloadKey to force the component to remount
-    setReloadKey(prevKey => prevKey + 1);
-  };
-
+useGSAP(() => {
+  gsap.from(".nav-logo, .nav-links > a", 2, {
+    top: "30px",
+    opacity: 0,
+    ease: "power4.inOut",
+    delay: 1,
+    stagger: {
+      amount: 0.3,
+    }
+  })
+  })
   return (
     <div>
       
@@ -31,7 +31,7 @@ const Navbar = () => {
             <Link to="/contact">Contact</Link>
           </div>
         </div>
-        <button onClick={handleReload}>Force Reload</button>
+       
       <Link to="/">Home</Link>
     </div>
   )

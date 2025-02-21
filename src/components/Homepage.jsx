@@ -1,25 +1,79 @@
+"use client"
 // src/pages/Homepage.js
 import React, { useEffect, useState } from 'react';
 import "../styles/homepage.css"; // Import your styles
 import animateElements from '../script/gsapAnimations.js'; // Correct import (default export)
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Homepage = () => {
-  const [reloadKey, setReloadKey] = useState(0);
 
-  useEffect(() => {
-    console.log("useEffect is running...");
+  useGSAP(() => {
+    gsap.from("h1", 2, {
+    y: 50,
+    opacity: 0,
+    ease: "power4.inOut",
+    delay: 1.5,
+    stagger: {
+      amount: 0.3,
+    }
+  });
 
-    animateElements();
-  }, [reloadKey]);  // Empty dependency array ensures the effect 
+  gsap.from(".play-wrapper, .pattern, .copy", 2, {
+    scaleY: 0,
+    ease: "power3.inOut",
+    stagger: {
+      amount: 0.3,
+    },
+    delay: 2.5,
+  });
 
-  const handleReload = () => {
-    // Increment the reloadKey to force the component to remount
-    setReloadKey(prevKey => prevKey + 1);
-  };
+  gsap.from(".hr", 2, {
+    width: "0",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+
+  gsap.from(".btns", 2, {
+    x: 50,
+    opacity: 0,
+    ease: "power3.inOut",
+    delay: 3,
+  });
+
+  gsap.from(".play-btn", 2, {
+    scale: 0,
+    ease: "power3.inOut",
+    delay: 3,
+  });
+
+  gsap.from(".hero-wrapper", 2, {
+    width: "100%",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+
+  gsap.from(".arrow", 2, {
+    scale: "0",
+    ease: "power3.inOut",
+    delay: 3,
+  });
+
+  gsap.from(".marquee", 2, {
+    bottom: "-10rem",
+    ease: "power3.inOut",
+    delay: 4,
+  });
+
+
+
+
+  })
 
   return (
-    <div>
-      <button onClick={handleReload}>Force Reload</button>
+    <main>
+    <section>
+      
       <div className="container">
         <div className="header">
           <div className="header-left col">
@@ -71,7 +125,11 @@ const Homepage = () => {
           </span>
         </div>
       </div>
-    </div>
+    </section>
+    <section>
+ 
+    </section>
+    </main>
   );
 }
 
