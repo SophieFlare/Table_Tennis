@@ -21,8 +21,8 @@ useGSAP(() => {
   })
   return (
     <div>
-      
-        <div className="nav" >
+      <div id="navbar-spacer"></div>
+        <div id="navbar" className="nav" >
           <div className="nav-logo">Open The World</div>
           <div className="nav-links">
             <Link to="/aboutus">About us</Link>

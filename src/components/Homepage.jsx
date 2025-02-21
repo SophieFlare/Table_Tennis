@@ -111,7 +111,7 @@ const Homepage = () => {
         </div>
         <div className="hero">
           <img 
-            src="images/opentheworld.webp"
+            src="images/open_the_world.png"
             alt=""
           />
           <div className="hero-wrapper"></div>
@@ -122,6 +122,8 @@ const Homepage = () => {
         <div className="marquee">
           <span>
             BUTTERFLY BUTTERFLY BUTTERFLY BUTTERFLY BUTTERFLY BUTTERFLY
+            BUTTERFLY BUTTERFLY BUTTERFLY BUTTERFLY BUTTERFLY BUTTERFLY
+            
           </span>
         </div>
       </div>
