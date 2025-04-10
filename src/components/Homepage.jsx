@@ -116,7 +116,10 @@ const Homepage = () => {
           />
           <div className="hero-wrapper"></div>
           <div className="arrow">
-            <ion-icon name="arrow-forward-sharp"></ion-icon>
+            <ion-icon name="arrow-forward-sharp">
+             
+            </ion-icon>
+            <img className="arrow-img" src="../../public/butterfly.png"/>
           </div>
         </div>
         <div className="marquee">

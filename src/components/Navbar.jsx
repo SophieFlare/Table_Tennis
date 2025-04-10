@@ -23,16 +23,16 @@ useGSAP(() => {
     <div>
       <div id="navbar-spacer"></div>
         <div id="navbar" className="nav" >
+        <Link to="/">
           <div className="nav-logo">Open The World</div>
+        </Link>
           <div className="nav-links">
             <Link to="/aboutus">About us</Link>
             <Link to="/projects">Projects</Link>
-            <Link to="/services">Services</Link>
+            <Link to="/services">Shop</Link>
             <Link to="/contact">Contact</Link>
           </div>
         </div>
-       
-      <Link to="/">Home</Link>
     </div>
   )
 }
